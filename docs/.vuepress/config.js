@@ -1,7 +1,7 @@
 const { genESSidebarConfig, genVueSidebarConfig } = require('./slider');
 
 module.exports = {
-  base: '/',
+  base: '/x-shard/',
   title: 'X-SHARD',
   description: 'testtest',
   markdown: {
