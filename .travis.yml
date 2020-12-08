@@ -9,8 +9,8 @@ script:
 after_success:
   - cd docs/.vuepress/dist
   - git init
-  - git config --global user.name "${U_NAME}"
-  - git config --global user.email "${U_EMAIL}"
+  - git config --global user.name $GH_EMAIL
+  - git config --global user.email $GH_NAME
   - git add -A
-  - git commit -m "chore(deploy): deploy gh-pages"
-  - git push --quiet --force "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+  - git commit -m 'deploy gh-pages'
+  - git push --quiet --force https://$GH_TOKEN@$GH_REF master:$P_BRANCH
