@@ -18,10 +18,6 @@ jobs:
         with:
           persist-credentials: false
 
-      # 生成静态文件
-      - name: Build
-        run: npm install && npm run build
-
       # 部署到 GitHub Pages
       - name: Deploy
         uses: jenkey2011/vuepress-deploy@master
