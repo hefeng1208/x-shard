@@ -6,13 +6,15 @@
   "homepage": "https://hefeng1208.github.io/x-shard",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy": "npm run build && gh-pages -d docs/.vuepress/dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@vuepress/plugin-back-to-top": "^1.7.1",
+    "gh-pages": "^3.1.0",
     "vuepress": "^1.7.1"
   }
 }
