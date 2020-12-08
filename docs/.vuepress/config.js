@@ -3,7 +3,7 @@ const { genESSidebarConfig, genVueSidebarConfig } = require('./slider');
 module.exports = {
   base: '/',
   title: 'X-SHARD',
-  description: '心碎乌托邦',
+  description: 'testtest',
   markdown: {
     lineNumbers: true
   },
