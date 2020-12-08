@@ -4,25 +4,34 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - master
+    - master
 
-# 任务
 jobs:
-  build-and-deploy:
-    # 服务器环境：最新版 Ubuntu
-    runs-on: ubuntu-latest
+  build-deploy:
+    runs-on: ubuntu-18.04
     steps:
-      # 拉取代码
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+    - uses: actions/checkout@master
 
-      # 部署到 GitHub Pages
-      - name: Deploy
-        uses: jenkey2011/vuepress-deploy@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_BRANCH: gh-pages
-          BUILD_SCRIPT: npm install && npm run build
-          FOLDER_DIR: docs/.vuepress/dist
+    # - name: Setup Node
+    #   uses: actions/setup-node@v1
+    #   with:
+    #     node-version: '10.x'
+
+    # - name: Cache dependencies
+    #   uses: actions/cache@v1
+    #   with:
+    #     path: ~/.npm
+    #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-node-
+
+    - run: npm ci
+
+    - run: npm run build
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACCESS_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: docs/.vuepress/dist
