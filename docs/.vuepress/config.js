@@ -47,7 +47,7 @@ module.exports = {
       {
         title: '数据结构',
         collapsable: true,
-        children: genDataStructureSidebarConfig('/blog/frontend/es/')
+        children: genDataStructureSidebarConfig('/blog/frontend/datastructure/')
       }
     ]
   }

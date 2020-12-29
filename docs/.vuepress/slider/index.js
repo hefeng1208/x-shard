@@ -25,11 +25,12 @@ function genESSidebarConfig(basePath) {
 function genDataStructureSidebarConfig(basePath) {
   const addItem = [
     {
-      title: '数组',
-      path: '',
+      title: '二叉搜索树',
+      path: 'binarySearchTree',
       collapsable: true,
     }
   ]
+  console.log(changeBasePath(addItem, basePath))
   return changeBasePath(addItem, basePath)
 }
 
