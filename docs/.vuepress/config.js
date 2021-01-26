@@ -1,6 +1,10 @@
 const {
+  genELSidebarConfig,
+  genWPSidebarConfig,
   genESSidebarConfig,
-  genVueSidebarConfig,
+  genVue3SidebarConfig,
+  genVue2SidebarConfig,
+  genNodeSidebarConfig,
   genDataStructureSidebarConfig
 } = require('./slider');
 
@@ -35,9 +39,24 @@ module.exports = {
     nav: require('./nav/index'),
     sidebar: [
       {
-        title: 'Vue 3 源码解析',
+        title: 'Vue2',
         collapsable: true,
-        children: genVueSidebarConfig('/blog/frontend/vue/')
+        children: genVue2SidebarConfig('/blog/frontend/vue2/')
+      },
+      {
+        title: 'Vue3',
+        collapsable: true,
+        children: genVue3SidebarConfig('/blog/frontend/vue3/')
+      },
+      {
+        title: 'EggJS',
+        collapsable: true,
+        children: genNodeSidebarConfig('/blog/backend/node/')
+      },
+      {
+        title: '数据结构',
+        collapsable: true,
+        children: genDataStructureSidebarConfig('/blog/frontend/datastructure/')
       },
       {
         title: 'ES 语法详解',
@@ -45,10 +64,27 @@ module.exports = {
         children: genESSidebarConfig('/blog/frontend/es/')
       },
       {
-        title: '数据结构',
+        title: '事件循环',
         collapsable: true,
-        children: genDataStructureSidebarConfig('/blog/frontend/datastructure/')
-      }
+        children: genELSidebarConfig('/blog/eventLoop/')
+      },
+      {
+        title: 'TypeScript',
+        collapsable: true,
+        path: ''
+        // children: genTSSidebarConfig('/blog/typescript/')
+      },
+      {
+        title: 'Webpack',
+        collapsable: true,
+        children: genWPSidebarConfig('/blog/webpack/')
+      },
+      {
+        title: '算法',
+        collapsable: true,
+        path: ''
+        // children: genAlSidebarConfig('/blog/algorithm/')
+      },
     ]
   }
 }
