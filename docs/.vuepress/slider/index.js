@@ -10,6 +10,22 @@ function genVue3SidebarConfig(basePath) {
   ]
   return changeBasePath(addItem, basePath)
 }
+function genBrowserSidebarConfig(basePath) {
+  const addItem = [
+    {
+      title: '浏览器缓存',
+      path: 'cache',
+      collapsable: false,
+    },
+    {
+      title: '浏览器渲染流程',
+      path: 'principle',
+      sidebarDepth: 0,
+      collapsable: false,
+    }
+  ]
+  return changeBasePath(addItem, basePath)
+}
 function genVue2SidebarConfig(basePath) {
   const addItem = [
     {
@@ -115,5 +131,6 @@ module.exports = {
   genWPSidebarConfig,
   genELSidebarConfig,
   genNodeSidebarConfig,
+  genBrowserSidebarConfig,
   genDataStructureSidebarConfig
 }

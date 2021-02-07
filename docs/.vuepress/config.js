@@ -4,6 +4,7 @@ const {
   genESSidebarConfig,
   genVue3SidebarConfig,
   genVue2SidebarConfig,
+  genBrowserSidebarConfig,
   genNodeSidebarConfig,
   genDataStructureSidebarConfig
 } = require('./slider');
@@ -47,6 +48,11 @@ module.exports = {
         title: 'Vue3',
         collapsable: true,
         children: genVue3SidebarConfig('/blog/frontend/vue3/')
+      },
+      {
+        title: '浏览器原理',
+        collapsable: true,
+        children: genBrowserSidebarConfig('/blog/browser/')
       },
       {
         title: 'EggJS',
